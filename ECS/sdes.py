@@ -6,7 +6,6 @@ def pad(x, y):
         x = "0" + x
     return x
 
-
 def binarize(x, x1=""):
     temp = pad(bin(int(x, 16)).zfill(4)[2:], 4)
     for i in range(len(temp)):
@@ -15,16 +14,13 @@ def binarize(x, x1=""):
         x1 += temp[i]
     return temp[len(temp) - 1] + x1 + temp[0]
 
-
 def Cyclic_Shift(x, i):
     return x[i:] + x[:i]
-
 
 def XOR(x, y, tmp=""):
     for i in range(len(y)):
         tmp += str(int(x[i]) ^ int(y[i]))
     return tmp
-
 
 KEY = input("Enter Key: ")
 t1 = time.time()
